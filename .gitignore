@@ -4,5 +4,6 @@ obj/
 __pycache__/
 *.pyc
 smoke/result.json
+smoke_project/result.json
 publish/*
 !publish/PyDrop.exe

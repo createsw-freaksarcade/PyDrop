@@ -1,10 +1,10 @@
 # PyDrop
 
-Windows 64비트용 Python 파일 실행기입니다. `PyDrop.exe`에 `.py` 파일을 끌어다 놓거나, 실행기에서 파일을 선택한 후 실행할 수 있습니다. 출력과 오류는 실행기 창에서 확인할 수 있습니다.
+Windows 64비트용 Python 프로젝트 실행기입니다. `PyDrop.exe`에 `.py` 파일이나 프로젝트 폴더를 끌어다 놓을 수 있습니다. 폴더를 선택하면 `main.py`, `app.py`, `__main__.py` 순서로 시작 파일을 찾습니다. 실행기에서 파일이나 폴더를 직접 선택할 수도 있습니다. 출력과 오류는 실행기 창에서 확인할 수 있습니다.
 
-Python을 따로 설치할 필요가 없습니다. 첫 실행 시 EXE에 포함된 Python 3.12.10 런타임을 `%LOCALAPPDATA%\PyDrop`에 풀어 사용합니다. 스크립트 폴더에 있는 다른 `.py` 모듈과 표준 라이브러리는 사용할 수 있습니다.
+Python을 따로 설치할 필요가 없습니다. 첫 실행 시 EXE에 포함된 Python 3.12.10 런타임을 `%LOCALAPPDATA%\PyDrop`에 풀어 사용합니다. 프로젝트 폴더를 작업 디렉터리로 사용하므로 상대 경로의 이미지, 음원, 데이터와 다른 `.py` 모듈을 그대로 읽을 수 있습니다.
 
-`pygame`, `requests` 같은 외부 패키지는 기본 포함되지 않습니다. 필요한 패키지를 해당 스크립트 옆의 `packages` 폴더에 Windows x64 / Python 3.12 호환 형태로 넣어야 합니다. `tkinter`와 `pip`는 Python 임베디드 배포판에 포함되지 않습니다.
+프로젝트 폴더에 `requirements.txt`가 있으면 첫 실행 때 필요한 패키지를 자동 설치해 `%LOCALAPPDATA%\PyDrop\packages`에 보관합니다. 리듬게임에 필요한 `pygame`, OpenCV, ModernGL, mutagen 및 의존 패키지는 EXE에 포함되어 인터넷 없이 설치됩니다. 다른 패키지가 필요하면 온라인 설치를 시도합니다. 이후 같은 요구사항은 캐시를 재사용합니다. 수동으로 준비한 패키지는 프로젝트의 `packages` 폴더에서도 읽습니다. `requirements.txt`가 없는 프로젝트는 필요한 외부 패키지를 자동으로 알 수 없습니다. `tkinter`는 Python 임베디드 배포판에 포함되지 않습니다.
 
 ## 빌드
 

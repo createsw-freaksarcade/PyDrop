@@ -11,5 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="runtime\python-3.12.10-embed-amd64.zip" />
+    <EmbeddedResource Include="runtime\pip-25.3-py3-none-any.whl" />
+    <EmbeddedResource Include="runtime\wheels\*.whl" />
   </ItemGroup>
 </Project>
